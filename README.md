@@ -1,4 +1,4 @@
-# Pomodoro DemonSlayer(made by Erwin)
+# Pomodoro DemonSlayer(made by Erwin) 🥱🕰
 
 ## Manuel D'installation
 
