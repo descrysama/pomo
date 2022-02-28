@@ -1,6 +1,6 @@
 let buttonAdd = document.getElementById('addpomo');
 let spriteSelect = document.getElementById('imagecontent');
-let workTime = 14;
+let workTime = 24;
 let breakTime = 4;
 let sec = 60;
 let stopwatch = false;
@@ -11,7 +11,7 @@ function startWork() {
   if (stopwatch == false) {
     stopwatch = true;
     min = workTime;
-    time = setInterval(cycle, 1000);
+    time = setInterval(cycle, 10);
   }
 
   document.getElementById('startbutton').disabled = true
@@ -36,8 +36,10 @@ function stop() {
 
 function reset(){
   clearInterval(time)
-  workTime = 14;
+  workTime = 24;
   breakTime = 4;
+  sec = 60;
+  stopwatch = false;
   document.getElementById('time').innerHTML = "00"+":"+"00";
   document.getElementById('title').innerHTML = "00"+":"+"00";
   document.getElementById('startbutton').disabled = false
@@ -57,7 +59,7 @@ function cycle() {
     mybreak = true;
     thecycle++;
   } else if (min == 0 && mybreak == true){
-    workTime = 14;
+    workTime = 24;
     min = workTime;
     sec = 60;
     mybreak = false
