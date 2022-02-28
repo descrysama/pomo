@@ -11,7 +11,7 @@ function startWork() {
   if (stopwatch == false) {
     stopwatch = true;
     min = workTime;
-    time = setInterval(cycle, 10);
+    time = setInterval(cycle, 1000);
   }
 
   document.getElementById('startbutton').disabled = true
