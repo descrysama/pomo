@@ -1,3 +1,9 @@
+body {
+    height: 100vh !important;
+    width: 100vw !important;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 .column {
     display: flex;
     flex-direction: column;
@@ -5,6 +11,10 @@
     align-items: center;
 }
 
-img.clearer {
-    border-style : none !important;
+img {
+    border: none !important;
+}
+
+#myimg {
+    position: absolute;
 }

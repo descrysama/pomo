@@ -11,16 +11,13 @@ function startWork() {
   if (stopwatch == false) {
     stopwatch = true;
     min = workTime;
-    time = setInterval(cycle, 10);
+    time = setInterval(cycle, 1000);
   }
-  document.getElementById('pausebutton').disabled = false;
-  document.getElementById('startbutton').disabled = true;
-  let img = document.createElement('img');
-  img.src = "demon-slayer.gif";
-  img.setAttribute('id', 'myimg');
-  img.style.border = 'none';
-  document.getElementById('imagecontent').innerHTML = "";
-  document.getElementById('imagecontent').appendChild(img)
+
+  document.getElementById('startbutton').disabled = true
+  document.getElementById('pausebutton').disabled = false
+  document.querySelector('#myimg').src = "demon-slayer.gif";
+
 }
 
 
@@ -32,14 +29,19 @@ function stop() {
     workTime = min;
   }
   stopwatch = false;
-  document.getElementById('pausebutton').disabled = true
   document.getElementById('startbutton').disabled = false
-  let img = document.createElement('img');
-  img.src = "breaktime.png";
-  img.setAttribute('id', 'myimg');
-  img.style.border = 'none';
-  document.getElementById('imagecontent').innerHTML = "";
-  document.getElementById('imagecontent').appendChild(img)
+  document.getElementById('pausebutton').disabled = true
+  document.querySelector('#myimg').src = "breaktime.png";
+}
+
+function reset(){
+  clearInterval(time)
+  workTime = 14;
+  breakTime = 4;
+  document.getElementById('time').innerHTML = "00"+":"+"00";
+  document.getElementById('title').innerHTML = "00"+":"+"00";
+  document.getElementById('startbutton').disabled = false
+  document.getElementById('pausebutton').disabled = false
 }
 
 function cycle() {
@@ -66,6 +68,8 @@ function cycle() {
   document.getElementById('title').innerHTML = min+":"+sec;
 }
 
-document.getElementById('myimg').addEventListener('click mousemove', function() {
-  document.getElementById('myimg')
+
+document.body.addEventListener('dragover', (e)=> {
+  document.getElementById('myimg').style.top = e.pageY-100+"px";
+  document.getElementById('myimg').style.left = e.pageX-100+"px";
 })

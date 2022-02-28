@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">00:00</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.3/dist/paper.min.css">
 </head>
 <body>
-    <div class="paper row flex-center">
-        <div class="flex">
+    <div class="row flex-center">
+        <div class="flex text-center">
             <h3 id="time">00:00</h3>
             <button onclick="startWork()" id="startbutton">Start</button>
             <button onclick="stop()" id="pausebutton">Pause</button>
+            <button onclick="reset()" id="resetbutton">Reset</button>
             <div id="imagecontent">
-
+                <img id="myimg" >
             </div>
         </div>
     </div>
